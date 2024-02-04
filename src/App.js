@@ -39,7 +39,7 @@ function App() {
       <Alert alert={alert} showAlert={showAlert} />
       <div className="container my-3">
         <TextForm
-          heading="Enter the text below"
+          heading="Try TextUtils - Word Counter, Character Counter, Remove extra spaces"
           mode={mode}
           showAlert={showAlert}
         />
