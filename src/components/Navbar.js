@@ -10,10 +10,11 @@ export default function Navbar(props) {
         data-bs-theme={`${props.mode}`}
       >
         <div className="container-fluid">
-          <a className="navbar-brand" href="/">
-            {props.title}
-          </a>
-          <button
+          <div className="d-flex align-items-center">
+            <a className="navbar-brand" href="#">
+              {props.title}
+            </a>
+            {/* <button
             className="navbar-toggler collapsed"
             type="button"
             data-bs-toggle="collapse"
@@ -23,39 +24,50 @@ export default function Navbar(props) {
             aria-label="Toggle navigation"
           >
             <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="navbar-collapse collapse" id="navbarNav">
-            <ul className="navbar-nav">
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/">
-                  Home
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/about">
-                  {props.aboutText}
-                </a>
-              </li>
-            </ul>
-            <div
-              className={`form-check form-switch text-${
-                props.mode === "light" ? "dark" : "light"
-              }`}
+          </button> */}
+            {/* <div className="navbar-collapse collapse" id="navbarNav"> */}
+            <a
+              className="nav-link active fs-6 me-3"
+              aria-current="page"
+              href="#"
             >
-              <input
-                className="form-check-input"
-                onClick={props.toggleMode}
-                type="checkbox"
-                role="switch"
-                id="flexSwitchCheckDefault"
-              />
-              <label
-                className="form-check-label"
-                htmlFor="flexSwitchCheckDefault"
-              >
-                {props.mode === "light" ? "Dark" : "Light"} mode
-              </label>
-            </div>
+              Home
+            </a>
+            {/* <a className="nav-link fs-6 " href="/about">
+              {props.aboutText}
+            </a> */}
+          </div>
+          {/* <ul className="navbar-nav">
+            <li className="nav-item">
+              <a className="nav-link active" aria-current="page" href="/">
+                Home
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/about">
+                {props.aboutText}
+              </a>
+            </li>
+          </ul> */}
+          {/* </div> */}
+          <div
+            className={`form-check form-switch text-${
+              props.mode === "light" ? "dark" : "light"
+            }`}
+          >
+            <input
+              className="form-check-input"
+              onClick={props.toggleMode}
+              type="checkbox"
+              role="switch"
+              id="flexSwitchCheckDefault"
+            />
+            <label
+              className="form-check-label"
+              htmlFor="flexSwitchCheckDefault"
+            >
+              {props.mode === "light" ? "Dark" : "Light"} mode
+            </label>
           </div>
         </div>
       </nav>
