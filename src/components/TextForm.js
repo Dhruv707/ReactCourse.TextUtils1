@@ -26,6 +26,17 @@ export default function TextForm(props) {
     // so here text=earlier value+new value typed
   };
 
+  const handleCopy = () => {
+    navigator.clipboard.writeText(text);
+    props.showAlert("Copied to Clipboard!", "info");
+  };
+
+  const handleExtraSpaces = () => {
+    let newText = text.trim().replace(/\s+/g, " ");
+    setText(newText);
+    props.showAlert("Extra spaces removed!", "info");
+  };
+
   const [text, setText] = useState("");
   return (
     <>
@@ -48,17 +59,40 @@ export default function TextForm(props) {
             rows="8"
           ></textarea>
         </div>
-        <button className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>
+        <button
+          disabled={text.length === 0}
+          className="btn btn-primary mx-1 my-1"
+          onClick={handleUpClick}
+        >
           Convert to Uppercase
         </button>
-        <button className="btn btn-primary mx-1 my-1" onClick={handleLowClick}>
+        <button
+          disabled={text.length === 0}
+          className="btn btn-primary mx-1 my-1"
+          onClick={handleLowClick}
+        >
           Convert to Lowercase
         </button>
         <button
+          disabled={text.length === 0}
           className="btn btn-primary mx-1 my-1"
           onClick={handleClearClick}
         >
           Clear
+        </button>
+        <button
+          disabled={text.length === 0}
+          className="btn btn-primary mx-1 my-1"
+          onClick={handleCopy}
+        >
+          Copy Text
+        </button>
+        <button
+          disabled={text.length === 0}
+          className="btn btn-primary mx-1 my-1"
+          onClick={handleExtraSpaces}
+        >
+          Remove Extra Spaces
         </button>
       </div>
       <div
@@ -67,6 +101,7 @@ export default function TextForm(props) {
       >
         <h2>Your text summary</h2>
         <p>
+          {/* can alos use text.split(" ").filter((element)=>{return element.length!==0}) to count words */}
           {text.trim() === "" ? 0 : text.trim().split(/\s+/).length} words and{" "}
           {text.replace(/\s+/g, "").length} characters
         </p>
