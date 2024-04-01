@@ -11,7 +11,7 @@ export default function Navbar(props) {
       >
         <div className="container-fluid">
           <div className="d-flex align-items-center">
-            <a className="navbar-brand" href="#">
+            <a className="navbar-brand" href="#" style={{ marginLeft: "20px" }}>
               {props.title}
             </a>
             {/* <button
@@ -26,13 +26,13 @@ export default function Navbar(props) {
             <span  className="navbar-toggler-icon"></span>
           </button> */}
             {/* <div className="navbar-collapse collapse" id="navbarNav"> */}
-            <a
+            {/* <a
               className="nav-link active fs-6 me-3"
               aria-current="page"
               href="#"
             >
               Home
-            </a>
+            </a> */}
             {/* <a className="nav-link fs-6 " href="/about">
               {props.aboutText}
             </a> */}
